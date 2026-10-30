@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Uma pequena experiência interativa para descobrir a idade aproximada." />
+    <title>Descubra seu momento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="/" aria-label="Descubra seu momento — início">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span>descubra<br /><strong>seu momento</strong></span>
+        </a>
+        <div class="header-note"><span class="status-dot"></span> uma pausa para você</div>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="page-title">
+          <div class="hero-copy">
+            <p class="eyebrow">experiência interativa <span>01</span></p>
+            <h1 id="page-title">O tempo passa.<br /><em>O que fica?</em></h1>
+            <p class="hero-description">Conte para a gente quando sua história começou. Uma conta simples para lembrar que cada ano também é uma conquista.</p>
+          </div>
+          <div class="hero-orbit" aria-hidden="true">
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <div class="orbit-core">tempo<br /><strong>é agora</strong></div>
+            <span class="orbit-label label-top">hoje</span>
+            <span class="orbit-label label-bottom">seu ritmo</span>
+          </div>
+        </section>
+
+        <section class="interaction-card" aria-labelledby="form-title">
+          <div class="card-intro">
+            <p class="step-label">/ primeiro passo</p>
+            <h2 id="form-title">Quando você nasceu?</h2>
+            <p>Digite apenas o ano. A gente faz o resto.</p>
+          </div>
+
+          <form id="age-form" novalidate>
+            <div class="field-wrap">
+              <label for="birth-year">Ano de nascimento</label>
+              <div class="input-row">
+                <input id="birth-year" name="birth-year" type="number" inputmode="numeric" min="1900" max="2026" placeholder="ex.: 1998" autocomplete="bday-year" aria-describedby="field-message" />
+                <button type="submit" class="primary-button">
+                  <span>calcular</span>
+                  <span class="button-arrow" aria-hidden="true">↗</span>
+                </button>
+              </div>
+              <p id="field-message" class="field-message" role="alert"></p>
+            </div>
+          </form>
+
+          <div id="result-panel" class="result-panel" aria-live="polite" aria-atomic="true">
+            <div class="result-icon" aria-hidden="true">✦</div>
+            <div>
+              <p class="result-kicker">seu resultado aparece aqui</p>
+              <p id="result-text" class="result-text">Pronto para fazer uma descoberta?</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="reflection" aria-label="Mensagem de reflexão">
+          <div class="reflection-number">02</div>
+          <div>
+            <p class="eyebrow">pequena reflexão</p>
+            <blockquote>“Não é sobre contar os anos. É sobre perceber tudo o que você já viveu dentro deles.”</blockquote>
+          </div>
+          <div class="reflection-line" aria-hidden="true"></div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <span>feito para uma pausa consciente</span>
+        <span class="footer-year">© <span id="current-year"></span></span>
+      </footer>
+    </div>
+  </body>
+</html>
